@@ -1,3 +1,4 @@
 <?php
 
-echo 'こちらはPHPです';
+$test = 'Hello PhpWorld!';
+echo $test;
