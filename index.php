@@ -1,5 +1,6 @@
 <?php
 
 $test = 'Hello PhpWorld!';
-$test = 123;
-var_dump($test); // => int(123)
+$test2 = 123;
+$test3 = $test . $test2;
+var_dump($test3); // => string(18) "Hello PhpWorld!123"
