@@ -2,4 +2,4 @@
 
 $test = 'Hello PhpWorld!';
 $test = 123;
-echo $test;
+var_dump($test); // => int(123)
