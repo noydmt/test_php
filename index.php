@@ -1,6 +1,5 @@
 <?php
-$array = [1,2,3];
-echo $array; // => Array
-echo $array[0]; // => 1
-var_dump($array); // => array(3) { [0]=> int(1) [1]=> int(2) [2]=> int(3) }
+$array = [1,'aaaa',3];
+echo $array[1]; // => aaaa
+var_dump($array) // => array(3) { [0]=> int(1) [1]=> string(4) "aaaa" [2]=> int(3) }
 ?>
