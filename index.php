@@ -14,5 +14,7 @@ $japan_soccer_national_team = [
   ]
 ];
 
-echo $japan_soccer_national_team['honda']['position']; // => FW
+if ($japan_soccer_national_team['honda']['position'] == 'FW') {
+  echo '本田はFWだ'; // 出力される
+}
 ?>
