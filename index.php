@@ -1,10 +1,9 @@
 <?php
-$array = [
-    [1,2,3,4],
-    [1,2,'3',4,5],
-    []
+$human = [
+  'name'=>'taro',
+  'age'=>17,
+  'hobby'=>'soccer'
 ];
-echo '<pre>';
-var_dump($array);
-echo '</pre>';
+
+echo $human["name"]; // => taro
 ?>
