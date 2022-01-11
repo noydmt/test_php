@@ -1,9 +1,18 @@
 <?php
-$human = [
-  'name'=>'taro',
-  'age'=>17,
-  'hobby'=>'soccer'
+$japan_soccer_national_team = [
+  'honda'=>[
+    'position'=>'FW',
+    'club'=>'AC Milan'
+  ],
+  'kagawa'=>[
+    'position'=>'MF',
+    'club'=>'Manchester United'
+  ],
+  'nagatomo'=>[
+    'position'=>'SB',
+    'club'=>'Intel'
+  ]
 ];
 
-echo $human["name"]; // => taro
+echo $japan_soccer_national_team['honda']['position']; // => FW
 ?>
