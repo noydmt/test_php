@@ -1,14 +1,11 @@
 <?php
 $members = [ 'name' => 'honda', 'age' => 30, 'born_in' => 'osaka' ];
 
-foreach($members as $member) {
-  echo $member;
+foreach($members as $key => $value) {
+  echo $key . ', ' . $value;
   echo '<br />';
-  /**
-   * honda
-   * 30
-   * osaka
-   * と出力
-   */
+  // name, honda
+  // age, 30
+  // born_in, osaka と出力
 }
 ?>
