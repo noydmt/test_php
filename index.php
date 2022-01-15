@@ -1,11 +1,8 @@
 <?php
-$members = [ 'name' => 'honda', 'age' => 30, 'born_in' => 'osaka' ];
+$arrayList = array(1,2,3,4,5,6);
 
-foreach($members as $key => $value) {
-  echo $key . ', ' . $value;
-  echo '<br />';
-  // name, honda
-  // age, 30
-  // born_in, osaka と出力
+for ($i = 0; $i < count($arrayList); $i++) {
+  echo $arrayList[$i];
 }
+
 ?>
