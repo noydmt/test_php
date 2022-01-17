@@ -1,14 +1,7 @@
 <?php
 
-function test () {
-  echo 'テスト?';
-}
-test();
+// 文字列の長さを調べる
+$str = 'ggsgsdgsdgsd';
+echo strlen($str);
 
-echo '<br>';
-
-function test2($data) {
-  echo $data;
-}
-test2('rrrrrD');
 ?>
