@@ -1,7 +1,7 @@
 <?php
 require 'common.php';
 
-echo $commonVariable; // => common
+echo $test;
 
-commonTest(); // => 外部ファイルの関数
+phpinfo();
 ?>
