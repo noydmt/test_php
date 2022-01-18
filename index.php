@@ -1,9 +1,7 @@
 <?php
-$global = 'グローバル変数!!';
+require 'common.php';
 
-function checkTest($str) {
-  echo $str;
-}
+echo $commonVariable; // => common
 
-checkTest($global);
+commonTest(); // => 外部ファイルの関数
 ?>
