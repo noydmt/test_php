@@ -1,11 +1,9 @@
 <?php
-$global = 'グローバル変数';
+$global = 'グローバル変数!!';
 
-function checkTest() {
-  $local = 'ローカル変数';
-  global $global;
-  echo $global;
+function checkTest($str) {
+  echo $str;
 }
 
-checkTest();
+checkTest($global);
 ?>
