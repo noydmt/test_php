@@ -1,9 +1,10 @@
 <?php
-if (!empty($_POST)) {
-  // echo $_GET['your_name']; // GET 通信で送信した文字列が表示される
-  echo '<pre>';
-  var_dump($_POST);
-  echo '</ pre>';
+$pageflg = 0;
+if (!empty($_POST['btn_confirm'])) {
+  $pageflg = 1;
+}
+if (!empty($_POST['btn_submit'])) {
+  $pageflg = 2;
 }
 // $_GET => スーパーグローバル変数。中身は連想配列になっている。
 ?>
@@ -16,13 +17,28 @@ if (!empty($_POST)) {
   <title>Document</title>
 </head>
 <body>
-  <form method="POST" action="input.php">
-    <p>氏名</p>
-    <input type="text" name="your_name">
-    <input type="checkbox" name="sports[]" value="soccer">サッカー
-    <input type="checkbox" name="sports[]" value="baseball">野球
-    <input type="checkbox" name="sports[]" value="tennis">テニス
-    <input type="submit" value="送信">
-  </form>
+  <?php if ($pageflg === 0) : ?>
+    <form method="POST" action="input.php">
+      <p>氏名</p>
+      <input type="text" name="your_name">
+      <p>e-mail</p>
+      <input type="email" name="your_email">
+      <input type="submit" name="btn_confirm" value="確認">
+    </form>
+  <?php endif; ?>
+  <?php if ($pageflg === 1) : ?>
+    <form method="POST" action="input.php">
+      <p>氏名</p>
+      <?php echo $_POST['your_name'] ?>
+      <p>e-mail</p>
+      <?php echo $_POST['your_email'] ?>
+      <input type="submit" name="btn_submit" value="送信">
+      <input type="hidden" names="your_name" value="<?php echo $_POST['your_name'] ?>">
+      <input type="hidden" names="your_email" value="<?php echo $_POST['your_email'] ?>">
+    </form>
+  <?php endif; ?>
+  <?php if ($pageflg === 2) : ?>
+    <h3>送信が完了しました。</h3>
+  <?php endif; ?>
 </body>
 </html>
