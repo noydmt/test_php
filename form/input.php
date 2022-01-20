@@ -62,6 +62,7 @@ function h(string $str) {
       if ($_POST['csrf'] === $_SESSION['csrfToken']): 
     ?>
       <h3>送信が完了しました。</h3>
+      <?php unset($_SESSION['csrfToken']) ?>
     <?php endif; ?>
   <?php endif; ?>
 </body>
