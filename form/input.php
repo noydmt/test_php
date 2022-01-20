@@ -53,11 +53,16 @@ function h(string $str) {
       <input type="submit" name="btn_submit" value="送信">
       <input type="hidden" name="your_name" value="<?php echo h($_POST['your_name']); ?>">
       <input type="hidden" name="your_email" value="<?php echo h($_POST['your_email']); ?>">
+      <input type="hidden" name="csrf" value="<?php echo h($_POST['csrf']); ?>">
     </form>
     <?php endif; ?>
   <?php endif; ?>
   <?php if ($pageflg === 2) : ?>
-    <h3>送信が完了しました。</h3>
+    <?php
+      if ($_POST['csrf'] === $_SESSION['csrfToken']): 
+    ?>
+      <h3>送信が完了しました。</h3>
+    <?php endif; ?>
   <?php endif; ?>
 </body>
 </html>
