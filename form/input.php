@@ -30,7 +30,12 @@ function h(string $str) {
       <input type="email" name="your_email" value="<?php if (!empty($_POST['your_email'])) { echo h($_POST['your_email']); }?>">
       <input type="submit" name="btn_confirm" value="確認">
     </form>
-    <?php $csrfToken = bin2hex(random_bytes(32)); ?>
+    <?php
+      if(!isset($_SESSION['csrfToken'])) {
+        $csrfToken = bin2hex(random_bytes(32));
+        $_SESSION['csrfToken'] = $csrfToken;
+      }
+    ?>
   <?php endif; ?>
   <?php if ($pageflg === 1) : ?>
     <form method="POST" action="input.php">
