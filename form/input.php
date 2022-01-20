@@ -1,4 +1,5 @@
 <?php
+session_start();
 // var_dump($_POST);
 $pageflg = 0;
 if (!empty($_POST['btn_confirm'])) {
