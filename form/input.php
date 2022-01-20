@@ -40,6 +40,9 @@ function h(string $str) {
     </form>
   <?php endif; ?>
   <?php if ($pageflg === 1) : ?>
+    <?php
+      if ($_POST['csrf'] === $_SESSION['csrfToken']): 
+    ?>
     <form method="POST" action="input.php">
       <p>氏名</p>
       <?php echo h($_POST['your_name']); ?>
@@ -50,6 +53,7 @@ function h(string $str) {
       <input type="hidden" name="your_name" value="<?php echo h($_POST['your_name']); ?>">
       <input type="hidden" name="your_email" value="<?php echo h($_POST['your_email']); ?>">
     </form>
+    <?php endif; ?>
   <?php endif; ?>
   <?php if ($pageflg === 2) : ?>
     <h3>送信が完了しました。</h3>
