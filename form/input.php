@@ -36,6 +36,26 @@ function h(string $str) {
       <input type="text" name="your_name" value="<?php if(!empty($_POST['your_name'] )) { echo h($_POST['your_name']); }?>">
       <p>e-mail</p>
       <input type="email" name="your_email" value="<?php if (!empty($_POST['your_email'])) { echo h($_POST['your_email']); }?>">
+      <p>ホームページ</p>
+      <input type="text" name="your_url" value="<?php if (!empty($_POST['your_url'])) { echo h($_POST['your_url']); }?>">
+      <p>性別</p>
+      <input type="radio" name="your_gender" value="0">男</input>
+      <input type="radio" name="your_gender" value="1">女</input>
+      <p>年齢</p>
+      <select name="your_age">
+      <option value="0">選択してください。</option>
+        <option value="1">15~19</option>
+        <option value="2">20~24</option>
+        <option value="3">25~29</option>
+        <option value="4">30~34</option>
+        <option value="5">35~</option>
+      </select>
+      <p>お問い合わせ</p>
+      <textarea name="your_contact" cols="30" rows="10">
+        <?php if (!empty($_POST['your_contact'])) { echo h($_POST['your_contact']); }?>
+      </textarea>
+      <input type="checkbox" name="caution" value="1">注意事項</input>
+      <br />
       <input type="submit" name="btn_confirm" value="確認">
       <input type="hidden" name="csrf" value="<?php echo $token; ?>">
     </form>
