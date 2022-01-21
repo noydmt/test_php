@@ -1,6 +1,6 @@
 <?php
 session_start();
-// var_dump($_POST);
+var_dump($_POST);
 $pageflg = 0;
 if (!empty($_POST['btn_confirm'])) {
   $pageflg = 1;
@@ -37,7 +37,7 @@ function h(string $str) {
       <p>e-mail</p>
       <input type="email" name="your_email" value="<?php if (!empty($_POST['your_email'])) { echo h($_POST['your_email']); }?>">
       <p>ホームページ</p>
-      <input type="text" name="your_url" value="<?php if (!empty($_POST['your_url'])) { echo h($_POST['your_url']); }?>">
+      <input type="url" name="your_url" value="<?php if (!empty($_POST['your_url'])) { echo h($_POST['your_url']); }?>">
       <p>性別</p>
       <input type="radio" name="your_gender" value="0">男</input>
       <input type="radio" name="your_gender" value="1">女</input>
@@ -51,9 +51,10 @@ function h(string $str) {
         <option value="5">35~</option>
       </select>
       <p>お問い合わせ</p>
-      <textarea name="your_contact" cols="30" rows="10">
+      <textarea name="your_contact" rows="10">
         <?php if (!empty($_POST['your_contact'])) { echo h($_POST['your_contact']); }?>
       </textarea>
+      <br>
       <input type="checkbox" name="caution" value="1">注意事項</input>
       <br />
       <input type="submit" name="btn_confirm" value="確認">
@@ -69,10 +70,26 @@ function h(string $str) {
       <?php echo h($_POST['your_name']); ?>
       <p>e-mail</p>
       <?php echo h($_POST['your_email']); ?>
+      <p>ホームページ</p>
+      <?php echo h($_POST['your_url']); ?>
+      <p>性別</p>
+      <?php echo h($_POST['your_gender']); ?>
+      <p>年齢</p>
+      <?php echo h($_POST['your_age']); ?>
+      <p>お問い合わせ</p>
+      <?php echo h($_POST['your_contact']); ?>
+      <p>注意事項</p>
+      <?php echo h($_POST['caution']); ?>
+      <br>
       <input type="submit" name="back" value="戻る">
       <input type="submit" name="btn_submit" value="送信">
       <input type="hidden" name="your_name" value="<?php echo h($_POST['your_name']); ?>">
       <input type="hidden" name="your_email" value="<?php echo h($_POST['your_email']); ?>">
+      <input type="hidden" name="your_url" value="<?php echo h($_POST['your_url']); ?>">
+      <input type="hidden" name="your_gender" value="<?php echo h($_POST['your_gender']); ?>">
+      <input type="hidden" name="your_age" value="<?php echo h($_POST['your_age']); ?>">
+      <input type="hidden" name="your_contact" value="<?php echo h($_POST['your_contact']); ?>">
+      <input type="hidden" name="caution" value="<?php echo h($_POST['caution']); ?>">
       <input type="hidden" name="csrf" value="<?php echo h($_POST['csrf']); ?>">
     </form>
     <?php endif; ?>
