@@ -73,13 +73,28 @@ function h(string $str) {
       <p>ホームページ</p>
       <?php echo h($_POST['your_url']); ?>
       <p>性別</p>
-      <?php echo h($_POST['your_gender']); ?>
+      <?php
+        if (h($_POST['your_gender']) === "0") { echo "男性"; };
+        if (h($_POST['your_gender']) === "1") { echo "女性"; };
+      ?>
       <p>年齢</p>
-      <?php echo h($_POST['your_age']); ?>
+      <?php
+        if (h($_POST['your_age']) === "1") { echo "15~19歳"; };
+        if (h($_POST['your_age']) === "2") { echo "20~24歳"; };
+        if (h($_POST['your_age']) === "3") { echo "25~29歳"; };
+        if (h($_POST['your_age']) === "4") { echo "30~34歳"; };
+        if (h($_POST['your_age']) === "5") { echo "35歳~"; };
+      ?>
       <p>お問い合わせ</p>
       <?php echo h($_POST['your_contact']); ?>
       <p>注意事項</p>
-      <?php echo h($_POST['caution']); ?>
+      <?php
+        if (h($_POST['caution']) === "1") {
+          echo "確認済み";
+        } else {
+          echo "未確認";
+        };
+      ?>
       <br>
       <input type="submit" name="back" value="戻る">
       <input type="submit" name="btn_submit" value="送信">
