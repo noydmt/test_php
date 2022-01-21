@@ -39,12 +39,12 @@ function h(string $str) {
       <p>ホームページ</p>
       <input type="url" name="your_url" value="<?php if (!empty($_POST['your_url'])) { echo h($_POST['your_url']); }?>">
       <p>性別</p>
-      <input type="radio" name="your_gender" value="0">男</input>
-      <input type="radio" name="your_gender" value="1">女</input>
+      <input type="radio" name="your_gender" value="0" <?php if (!empty($_POST['your_gender']) && h($_POST['your_gender']) === '0') { echo 'checked'; } ?>>男</input>
+      <input type="radio" name="your_gender" value="1" <?php if (!empty($_POST['your_gender']) && h($_POST['your_gender']) === '1') { echo 'checked'; } ?>>女</input>
       <p>年齢</p>
       <select name="your_age">
       <option value="0">選択してください。</option>
-        <option value="1">15~19</option>
+        <option value="1" selected>15~19</option>
         <option value="2">20~24</option>
         <option value="3">25~29</option>
         <option value="4">30~34</option>
