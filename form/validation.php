@@ -18,6 +18,11 @@
       array_push($errors, "メールアドレスを正しい形式で入力してください。");
     }
 
+    // URLバリデーション
+    if (empty($request['your_url'])) {
+      array_push($errors, "URLを入力してください。");
+    }
+
     return $errors;
   }
 ?>
