@@ -23,6 +23,15 @@
       array_push($errors, "URLを入力してください。");
     }
 
+    // 性別バリデーション
+    if (!isset($request['your_gender'])) {
+      array_push($errors, "性別を入力してください。");
+    }
+    $radioButtons = ['0','1'];
+    if (isset($request['your_gender']) && !(in_array($request['your_gender'], $radioButtons))) {
+      array_push($errors, "男性か女性か入力してください。");
+    }
+
     return $errors;
   }
 ?>
