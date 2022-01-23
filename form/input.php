@@ -35,7 +35,11 @@ function h(string $str) {
     ?>
     <?php if (!empty($errors) && !empty($_POST['btn_confirm'])): ?>
       <ul>
-        <li></li>
+        <?php
+          foreach($errors as $k => $error) {
+            echo '<li>' . $error . '</li>';
+          }
+        ?>
       </ul>
     <?php endif; ?>
     <form method="POST" action="input.php">
