@@ -32,6 +32,11 @@
       array_push($errors, "男性か女性か入力してください。");
     }
 
+    // 年齢バリデーション
+    if ($request['your_age'] === '0') {
+      array_push($errors, "年齢層を選択してください。");
+    }
+
     // 注意事項バリデーション
     if (empty($request['caution'])) {
       array_push($errors, "注意事項をご確認ください。");
