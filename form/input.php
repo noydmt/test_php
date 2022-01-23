@@ -43,12 +43,54 @@ function h(string $str) {
       <input type="radio" name="your_gender" value="1" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '1') { echo 'checked'; } ?>>女</input>
       <p>年齢</p>
       <select name="your_age">
-      <option value="0">選択してください。</option>
-        <option value="1" selected>15~19</option>
-        <option value="2">20~24</option>
-        <option value="3">25~29</option>
-        <option value="4">30~34</option>
-        <option value="5">35~</option>
+        <option value="0"
+          <?php
+            if (isset($_POST['your_age']) && $_POST['your_age'] === '0') {
+              echo 'selected';
+            }
+          ?>
+        >選択してください。
+        </option>
+        <option value="1"
+          <?php
+            if (isset($_POST['your_age']) && $_POST['your_age'] === '1') {
+              echo 'selected';
+            }
+          ?>
+        >15~19
+        </option>
+        <option value="2"
+          <?php
+            if (isset($_POST['your_age']) && $_POST['your_age'] === '2') {
+              echo 'selected';
+            }
+          ?>
+        >20~24
+        </option>
+        <option value="3"
+          <?php
+            if (isset($_POST['your_age']) && $_POST['your_age'] === '3') {
+              echo 'selected';
+            }
+          ?>
+        >25~29
+        </option>
+        <option value="4"
+          <?php
+            if (isset($_POST['your_age']) && $_POST['your_age'] === '4') {
+              echo 'selected';
+            }
+          ?>
+        >30~34
+        </option>
+        <option value="5"
+          <?php
+            if (isset($_POST['your_age']) && $_POST['your_age'] === '5') {
+              echo 'selected';
+            }
+          ?>
+        >35~
+        </option>
       </select>
       <p>お問い合わせ</p>
       <textarea name="your_contact" rows="10">
