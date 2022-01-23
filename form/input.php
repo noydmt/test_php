@@ -1,11 +1,13 @@
 <?php
 session_start();
-var_dump($_POST);
+require 'validation.php';
+// var_dump($_POST);
 $pageflg = 0;
-if (!empty($_POST['btn_confirm'])) {
+$errors = validation($_POST);
+if (!empty($_POST['btn_confirm']) && empty($errors)) {
   $pageflg = 1;
 }
-if (!empty($_POST['btn_submit'])) {
+if (!empty($_POST['btn_submit']) && empty($errors)) {
   $pageflg = 2;
 }
 // $_GET => スーパーグローバル変数。中身は連想配列になっている。
@@ -31,6 +33,11 @@ function h(string $str) {
       }
       $token = $_SESSION['csrfToken'];
     ?>
+    <?php if (!empty($errors) && !empty($_POST['btn_confirm'])): ?>
+      <ul>
+        <li></li>
+      </ul>
+    <?php endif; ?>
     <form method="POST" action="input.php">
       <p>氏名</p>
       <input type="text" name="your_name" value="<?php if(!empty($_POST['your_name'] )) { echo h($_POST['your_name']); }?>">
