@@ -14,7 +14,7 @@
     if (empty($request['your_email'])) {
       array_push($errors, "メールアドレスを入力してください。");
     }
-    if ((!empty($request['your_email'])) && filter_var($request['your_email'], FILTER_VALIDATE_EMAIL)) {
+    if ((!empty($request['your_email'])) && !filter_var($request['your_email'], FILTER_VALIDATE_EMAIL)) {
       array_push($errors, "メールアドレスを正しい形式で入力してください。");
     }
 
