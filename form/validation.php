@@ -33,7 +33,7 @@
     }
 
     // 年齢バリデーション
-    if ($request['your_age'] === '0') {
+    if (isset($request['your_age']) && $request['your_age'] === '0') {
       array_push($errors, "年齢層を選択してください。");
     }
 
