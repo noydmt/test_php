@@ -22,6 +22,9 @@
     if (empty($request['your_url'])) {
       array_push($errors, "URLを入力してください。");
     }
+    if (!empty($request['your_url']) && filter_var($request['your_url'], FILTER_VALIDATE_URL)) {
+      array_push($errors, "URLを正しい形式で入力してください。");
+    }
 
     // 性別バリデーション
     if (!isset($request['your_gender'])) {
