@@ -46,75 +46,95 @@ function h(string $str) {
         ?>
       </ul>
     <?php endif; ?>
-    <form method="POST" action="input.php">
-      <p>氏名</p>
-      <input type="text" name="your_name" value="<?php if(!empty($_POST['your_name'] )) { echo h($_POST['your_name']); }?>">
-      <p>e-mail</p>
-      <input type="email" name="your_email" value="<?php if (!empty($_POST['your_email'])) { echo h($_POST['your_email']); }?>">
-      <p>ホームページ</p>
-      <input type="url" name="your_url" value="<?php if (!empty($_POST['your_url'])) { echo h($_POST['your_url']); }?>">
-      <p>性別</p>
-      <input type="radio" name="your_gender" value="0" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '0') { echo 'checked'; } ?>>男</input>
-      <input type="radio" name="your_gender" value="1" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '1') { echo 'checked'; } ?>>女</input>
-      <p>年齢</p>
-      <select name="your_age">
-        <option value="0"
-          <?php
-            if (isset($_POST['your_age']) && $_POST['your_age'] === '0') {
-              echo 'selected';
-            }
-          ?>
-        >選択してください。
-        </option>
-        <option value="1"
-          <?php
-            if (isset($_POST['your_age']) && $_POST['your_age'] === '1') {
-              echo 'selected';
-            }
-          ?>
-        >15~19
-        </option>
-        <option value="2"
-          <?php
-            if (isset($_POST['your_age']) && $_POST['your_age'] === '2') {
-              echo 'selected';
-            }
-          ?>
-        >20~24
-        </option>
-        <option value="3"
-          <?php
-            if (isset($_POST['your_age']) && $_POST['your_age'] === '3') {
-              echo 'selected';
-            }
-          ?>
-        >25~29
-        </option>
-        <option value="4"
-          <?php
-            if (isset($_POST['your_age']) && $_POST['your_age'] === '4') {
-              echo 'selected';
-            }
-          ?>
-        >30~34
-        </option>
-        <option value="5"
-          <?php
-            if (isset($_POST['your_age']) && $_POST['your_age'] === '5') {
-              echo 'selected';
-            }
-          ?>
-        >35~
-        </option>
-      </select>
-      <p>お問い合わせ</p>
-      <textarea name="your_contact"><?php if (!empty($_POST['your_contact'])) { echo h($_POST['your_contact']); }?></textarea>
-      <br>
-      <input type="checkbox" name="caution" value="1">注意事項</input>
-      <br />
-      <input type="submit" name="btn_confirm" value="確認">
-      <input type="hidden" name="csrf" value="<?php echo $token; ?>">
-    </form>
+    <div class="container">
+      <form method="POST" action="input.php">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="your_name">氏名</label>
+              <input type="text" class="form-control" id="your_name" name="your_name" value="<?php if(!empty($_POST['your_name'] )) { echo h($_POST['your_name']); }?>" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="your_email">e-mail</label>
+              <input type="email" class="form-control" id="your_email" name="your_email" value="<?php if (!empty($_POST['your_email'])) { echo h($_POST['your_email']); }?>" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="your_email">ホームページ</label>
+              <input type="url" class="form-control" id="your_email" name="your_url" value="<?php if (!empty($_POST['your_url'])) { echo h($_POST['your_url']); }?>" required>
+            </div>
+          </div>
+        </div>
+        <p>性別</p>
+        <input type="radio" name="your_gender" value="0" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '0') { echo 'checked'; } ?>>男</input>
+        <input type="radio" name="your_gender" value="1" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '1') { echo 'checked'; } ?>>女</input>
+        <p>年齢</p>
+        <select name="your_age">
+          <option value="0"
+            <?php
+              if (isset($_POST['your_age']) && $_POST['your_age'] === '0') {
+                echo 'selected';
+              }
+            ?>
+          >選択してください。
+          </option>
+          <option value="1"
+            <?php
+              if (isset($_POST['your_age']) && $_POST['your_age'] === '1') {
+                echo 'selected';
+              }
+            ?>
+          >15~19
+          </option>
+          <option value="2"
+            <?php
+              if (isset($_POST['your_age']) && $_POST['your_age'] === '2') {
+                echo 'selected';
+              }
+            ?>
+          >20~24
+          </option>
+          <option value="3"
+            <?php
+              if (isset($_POST['your_age']) && $_POST['your_age'] === '3') {
+                echo 'selected';
+              }
+            ?>
+          >25~29
+          </option>
+          <option value="4"
+            <?php
+              if (isset($_POST['your_age']) && $_POST['your_age'] === '4') {
+                echo 'selected';
+              }
+            ?>
+          >30~34
+          </option>
+          <option value="5"
+            <?php
+              if (isset($_POST['your_age']) && $_POST['your_age'] === '5') {
+                echo 'selected';
+              }
+            ?>
+          >35~
+          </option>
+        </select>
+        <p>お問い合わせ</p>
+        <textarea name="your_contact"><?php if (!empty($_POST['your_contact'])) { echo h($_POST['your_contact']); }?></textarea>
+        <br>
+        <input type="checkbox" name="caution" value="1">注意事項</input>
+        <br />
+        <input type="submit" name="btn_confirm" value="確認">
+        <input type="hidden" name="csrf" value="<?php echo $token; ?>">
+      </form>
+    </div>
   <?php endif; ?>
   <?php if ($pageflg === 1) : ?>
     <?php
