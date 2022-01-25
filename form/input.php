@@ -73,8 +73,14 @@ function h(string $str) {
           </div>
         </div>
         <p>性別</p>
-        <input type="radio" name="your_gender" value="0" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '0') { echo 'checked'; } ?>>男</input>
-        <input type="radio" name="your_gender" value="1" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '1') { echo 'checked'; } ?>>女</input>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="man" name="your_gender" value="0" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '0') { echo 'checked'; } ?>>
+          <label class="form-check-label" for="man">男</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="woman" name="your_gender" value="1" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '1') { echo 'checked'; } ?>>
+          <label class="form-check-label" for="woman">女</label>
+        </div>
         <p>年齢</p>
         <select name="your_age">
           <option value="0"
