@@ -54,96 +54,89 @@ function h(string $str) {
               <label for="your_name">氏名</label>
               <input type="text" class="form-control" id="your_name" name="your_name" value="<?php if(!empty($_POST['your_name'] )) { echo h($_POST['your_name']); }?>" required>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
             <div class="form-group">
               <label for="your_email">e-mail</label>
               <input type="email" class="form-control" id="your_email" name="your_email" value="<?php if (!empty($_POST['your_email'])) { echo h($_POST['your_email']); }?>" required>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
             <div class="form-group">
               <label for="your_email">ホームページ</label>
               <input type="url" class="form-control" id="your_email" name="your_url" value="<?php if (!empty($_POST['your_url'])) { echo h($_POST['your_url']); }?>" required>
             </div>
-          </div>
+            <label>性別</label><br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="man" name="your_gender" value="0" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '0') { echo 'checked'; } ?>>
+              <label class="form-check-label" for="man">男</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="woman" name="your_gender" value="1" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '1') { echo 'checked'; } ?>>
+              <label class="form-check-label" for="woman">女</label>
+            </div>
+            <div class="form-group">
+              <label for="age">年齢</label>
+              <select class="form-control" name="your_age">
+                <option value="0"
+                  <?php
+                    if (isset($_POST['your_age']) && $_POST['your_age'] === '0') {
+                      echo 'selected';
+                    }
+                  ?>
+                >選択してください。
+                </option>
+                <option value="1"
+                  <?php
+                    if (isset($_POST['your_age']) && $_POST['your_age'] === '1') {
+                      echo 'selected';
+                    }
+                  ?>
+                >15~19
+                </option>
+                <option value="2"
+                  <?php
+                    if (isset($_POST['your_age']) && $_POST['your_age'] === '2') {
+                      echo 'selected';
+                    }
+                  ?>
+                >20~24
+                </option>
+                <option value="3"
+                  <?php
+                    if (isset($_POST['your_age']) && $_POST['your_age'] === '3') {
+                      echo 'selected';
+                    }
+                  ?>
+                >25~29
+                </option>
+                <option value="4"
+                  <?php
+                    if (isset($_POST['your_age']) && $_POST['your_age'] === '4') {
+                      echo 'selected';
+                    }
+                  ?>
+                >30~34
+                </option>
+                <option value="5"
+                  <?php
+                    if (isset($_POST['your_age']) && $_POST['your_age'] === '5') {
+                      echo 'selected';
+                    }
+                  ?>
+                >35~
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact">お問い合わせ</label>
+              <textarea class="form-control" id="contact" name="your_contact"><?php if (!empty($_POST['your_contact'])) { echo h($_POST['your_contact']); }?></textarea>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="caution" name="caution" value="1">
+              <label class="form-check-label" for="caution">注意事項</label>
+            </div>
+            <input class="btn btn-primary" type="submit" name="btn_confirm" value="確認する">
+            <input type="hidden" name="csrf" value="<?php echo $token; ?>">
+          </form>
         </div>
-        <label>性別</label><br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="man" name="your_gender" value="0" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '0') { echo 'checked'; } ?>>
-          <label class="form-check-label" for="man">男</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="woman" name="your_gender" value="1" <?php if (isset($_POST['your_gender']) && h($_POST['your_gender']) === '1') { echo 'checked'; } ?>>
-          <label class="form-check-label" for="woman">女</label>
-        </div>
-        <div class="form-group">
-          <label for="age">年齢</label>
-          <select class="form-control" name="your_age">
-            <option value="0"
-              <?php
-                if (isset($_POST['your_age']) && $_POST['your_age'] === '0') {
-                  echo 'selected';
-                }
-              ?>
-            >選択してください。
-            </option>
-            <option value="1"
-              <?php
-                if (isset($_POST['your_age']) && $_POST['your_age'] === '1') {
-                  echo 'selected';
-                }
-              ?>
-            >15~19
-            </option>
-            <option value="2"
-              <?php
-                if (isset($_POST['your_age']) && $_POST['your_age'] === '2') {
-                  echo 'selected';
-                }
-              ?>
-            >20~24
-            </option>
-            <option value="3"
-              <?php
-                if (isset($_POST['your_age']) && $_POST['your_age'] === '3') {
-                  echo 'selected';
-                }
-              ?>
-            >25~29
-            </option>
-            <option value="4"
-              <?php
-                if (isset($_POST['your_age']) && $_POST['your_age'] === '4') {
-                  echo 'selected';
-                }
-              ?>
-            >30~34
-            </option>
-            <option value="5"
-              <?php
-                if (isset($_POST['your_age']) && $_POST['your_age'] === '5') {
-                  echo 'selected';
-                }
-              ?>
-            >35~
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="contact">お問い合わせ</label>
-          <textarea class="form-control" id="contact" name="your_contact"><?php if (!empty($_POST['your_contact'])) { echo h($_POST['your_contact']); }?></textarea>
-        </div>
-        <br>
-        <input type="checkbox" name="caution" value="1">注意事項</input>
-        <br />
-        <input type="submit" name="btn_confirm" value="確認">
-        <input type="hidden" name="csrf" value="<?php echo $token; ?>">
-      </form>
+      </div>
     </div>
   <?php endif; ?>
   <?php if ($pageflg === 1) : ?>
