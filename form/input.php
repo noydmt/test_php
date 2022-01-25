@@ -134,8 +134,10 @@ function h(string $str) {
             </option>
           </select>
         </div>
-        <p>お問い合わせ</p>
-        <textarea name="your_contact"><?php if (!empty($_POST['your_contact'])) { echo h($_POST['your_contact']); }?></textarea>
+        <div class="form-group">
+          <label for="contact">お問い合わせ</label>
+          <textarea class="form-control" id="contact" name="your_contact"><?php if (!empty($_POST['your_contact'])) { echo h($_POST['your_contact']); }?></textarea>
+        </div>
         <br>
         <input type="checkbox" name="caution" value="1">注意事項</input>
         <br />
