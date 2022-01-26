@@ -12,6 +12,7 @@
 
   // $fileContents = file_get_contents($contactFile); // => あああ いいい ううう テストです！！！！！　と画面上に表示
 
+  // ファイル名型読み込み
   $allData = file($contactFile);
   // echo '<pre>';
   // var_dump($allData);
@@ -29,4 +30,12 @@
     echo '<br>';
   }
 
+
+  // ストリーム型
+  $contents = fopen($contactFile, 'a+'); // ファイルを追記モードで開く
+
+  $addText = "一行追記" . "\n";
+
+  fwrite($contents, $addText); // ファイルに書き込み
+  fclose($contents); // ファイルを閉じる
 ?>
