@@ -5,4 +5,12 @@
   $fileContents = file_get_contents($contactFile);
 
   echo $fileContents; // => あああ いいい ううう と画面上に表示
+
+  // FILE_APPEND を引数にすることで末尾に テストです!!!!! を追記
+  // FILE_APPEND を引数にしない場合、ファイル中身を全部書き換えする
+  file_put_contents($contactFile, "テストです！！！！！", FILE_APPEND);
+
+  $fileContents = file_get_contents($contactFile); // => あああ いいい ううう テストです！！！！！　と画面上に表示
+
+  echo $fileContents;
 ?>
