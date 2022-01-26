@@ -36,6 +36,7 @@ function h(string $str) {
         $_SESSION['csrfToken'] = $csrfToken;
       }
       $token = $_SESSION['csrfToken'];
+      echo $token;
     ?>
     <?php if (!empty($errors) && !empty($_POST['btn_confirm'])): ?>
       <ul>

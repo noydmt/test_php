@@ -1,7 +1,8 @@
 <?php
-  echo __FILE__;
-  // => /Applications/MAMP/htdocs/php_test/mainte/test.php
+  $contactFile = '.contact.dat';
 
-  echo password_hash('password123', PASSWORD_BCRYPT);
-  // => $2y$10$LmPdPBgdAHlG3zuMK5Ce1OiD24zUcCIgMpISM7Smbwzpyymakyg3a
+  // ファイルの中身ごと変数に格納
+  $fileContents = file_get_contents($contactFile);
+
+  echo $fileContents; // => あああ いいい ううう と画面上に表示
 ?>
