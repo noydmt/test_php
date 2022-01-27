@@ -11,7 +11,7 @@
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // => 例外を表示
       PDO::ATTR_EMULATE_PREPARES => false, // => SQLインジェクション対策
     ]);
-    echo '接続成功';
+    // echo '接続成功';
   } catch (PDOException $e) {
     echo $e->getMessage();
     exit(); // 処理を抜ける。
