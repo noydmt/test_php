@@ -1,7 +1,6 @@
 <?php
-  require 'db_connection.php';
-
   function insertContact($request) {
+    require 'db_connection.php';
     $params = [
       'id'=>null,
       'name'=>$request['your_name'],
