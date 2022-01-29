@@ -36,7 +36,6 @@ function h(string $str) {
         $_SESSION['csrfToken'] = $csrfToken;
       }
       $token = $_SESSION['csrfToken'];
-      echo $token;
     ?>
     <?php if (!empty($errors) && !empty($_POST['btn_confirm'])): ?>
       <ul>
@@ -192,6 +191,11 @@ function h(string $str) {
     <?php
       if ($_POST['csrf'] === $_SESSION['csrfToken']): 
     ?>
+      <?php
+        require '../mainte/insert.php';
+
+        insertContact($_POST);
+      ?>
       <h3>送信が完了しました。</h3>
       <?php unset($_SESSION['csrfToken']) ?>
     <?php endif; ?>
