@@ -18,6 +18,11 @@
     public function getInfomation() {
       echo 'This is Product Class';
     }
+
+    // NewsTrait トレイトのメソッドをオーバーライド
+    public function getNews() {
+      echo 'Product NewsTrait -> getNews()';
+    }
   }
 
   $product = new Product();
