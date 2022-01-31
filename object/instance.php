@@ -1,6 +1,6 @@
 <?php
   class BaseProduct {
-    function echoProduct() {
+    final public function echoProduct() {
       echo '親クラスです。';
     }
   }
@@ -27,6 +27,10 @@
     public static function getStaticProduct($str) {
       echo $str;
     }
+
+    // public function echoProduct() {
+    //   echo '子クラスです'; // Cannot override final method BaseProduct::echoProduct()
+    // }
   }
 
   $instance = new Product('テスト');
