@@ -10,9 +10,13 @@
   }
 
   // 親クラス
-  class BaseProduct {
+  class BaseProduct extends ProductAbstruct {
     public function echoProduct() {
       echo '親クラスです。';
+    }
+
+    public function getProduct() {
+
     }
   }
 
