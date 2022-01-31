@@ -94,4 +94,8 @@
   echo '<br>';
 
   Product::getStaticProduct('静的メソッド'); // 静的メソッド
+
+  echo '<br>';
+  $implClass = new impleClass();
+  $implClass->echoNews(); // impleClass::echoNews
 ?>
