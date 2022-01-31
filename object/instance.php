@@ -1,4 +1,15 @@
 <?php
+  //  抽象クラス
+  abstract class ProductAbstruct {
+    public function echoProduct() {
+      echo '親クラスです。';
+    }
+
+    // 具象クラスに対して実装を強制する
+    abstract public function getProduct();
+  }
+
+  // 親クラス
   class BaseProduct {
     public function echoProduct() {
       echo '親クラスです。';
