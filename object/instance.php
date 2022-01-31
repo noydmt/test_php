@@ -1,5 +1,9 @@
 <?php
-  class Product {
+  class BaseProduct {
+
+  }
+
+  class Product extends BaseProduct {
     private $product = [];
 
     // コンストラクター
