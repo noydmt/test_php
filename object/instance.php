@@ -1,4 +1,11 @@
 <?php
+  // インターフェース
+  interface ProductInterface {
+    public function echoProduct();
+
+    public function getProduct();
+  }
+
   //  抽象クラス
   abstract class ProductAbstruct {
     public function echoProduct() {
