@@ -5,6 +5,13 @@
 
     public function getProduct();
   }
+  
+  // インターフェース
+  interface NewsInterface {
+    public function echoNews();
+
+    public function getNews();
+  }
 
   //  抽象クラス
   abstract class ProductAbstruct {
@@ -24,6 +31,24 @@
 
     public function getProduct() {
 
+    }
+  }
+
+  class impleClass implements ProductInterface, NewsInterface {
+    public function echoProduct() {
+      echo 'impleClass::echoProduct';
+    }
+
+    public function getProduct() {
+      echo 'impleClass::getProduct';
+    }
+
+    public function echoNews(){
+      echo 'impleClass::echoNews';
+    }
+
+    public function getNews(){
+      echo 'impleClass::getNews';
     }
   }
 
