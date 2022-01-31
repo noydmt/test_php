@@ -1,6 +1,8 @@
 <?php
   class BaseProduct {
-
+    function echoProduct() {
+      echo '親クラスです。';
+    }
   }
 
   class Product extends BaseProduct {
@@ -34,6 +36,9 @@
 
   $instance->addProduct('追加分');
   $instance->getProduct(); // テスト追加分
+  echo '<br>';
+
+  $instance->echoProduct(); // 親クラスです。
   echo '<br>';
 
   Product::getStaticProduct('静的メソッド'); // 静的メソッド
