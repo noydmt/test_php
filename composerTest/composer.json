@@ -1,0 +1,14 @@
+{
+    "name": "tsurunaoya/composer-test",
+    "autoload": {
+        "psr-4": {
+            "Tsurunaoya\\ComposerTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "NaoyaTsudome"
+        }
+    ],
+    "require": {}
+}
