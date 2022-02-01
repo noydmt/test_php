@@ -1,8 +1,7 @@
 {
-    "name": "tsurunaoya/composer-test",
     "autoload": {
         "psr-4": {
-            "Tsurunaoya\\ComposerTest\\": "src/"
+            "App\\": "app/"
         }
     },
     "authors": [
