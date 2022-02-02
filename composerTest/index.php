@@ -6,4 +6,8 @@
 
 	$app = new TestController();
 	$app->run();
+
+	use Carbon\Carbon;
+	echo '<br>';
+	echo Carbon::now();
 ?>
